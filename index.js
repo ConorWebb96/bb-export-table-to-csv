@@ -6,6 +6,7 @@ const fs = require('fs');
 const budibaseAPIKey = process.env.BUDIBASE_API_KEY;
 const appID = process.env.APP_ID;
 const tableID = process.env.TABLE_ID;
+const callLimit = process.env.LIMIT;
 
 const progressBar = new cliProgress.SingleBar({
   format: 'Fetching rows... | {bar} | {percentage}% | {value} Rows',
@@ -22,11 +23,11 @@ const options = { // budibase options for fetching rows
     'content-type': 'application/json',
     'x-budibase-api-key': budibaseAPIKey
   },
-  body: JSON.stringify({ paginate: true, limit: 1000 })
+  body: JSON.stringify({ paginate: true, limit: callLimit })
 };
 
 function fetchRows(url, bookmark = null, accumulatedRows = []) {
-  const requestBody = { paginate: true, limit: 1000 };
+  const requestBody = { paginate: true, limit: callLimit };
 
   if (bookmark) {
     requestBody.bookmark = bookmark;

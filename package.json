@@ -1,6 +1,6 @@
 {
   "name": "budibase-csv-export",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Export budibase tables to a csv.",
   "main": "index.js",
   "scripts": {
