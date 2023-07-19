@@ -29,7 +29,7 @@ This is a readme explaining how to use this codebase to hook into the Budibase p
     * Paste your tableID into `TABLE_ID` within the `.env` file.
 
 # Command
-After you have finished with the setup process. Run the command `node exportCSV.js`, this should start a process in your terminal and export all your rows to a CSV file called `output.csv`. (The time it takes varies depending on size)
+After you have finished with the setup process. Run the command `npm run export`, this should start a process in your terminal and export all your rows to a CSV file called `output.csv`. (The time it takes varies depending on size)
 
 # Demo
 ![bb csv export public api](https://github.com/ConorWebb96/bb-export-table-to-csv/assets/126772285/035aecfa-cfab-4705-b158-2c6dcd0a381f)
