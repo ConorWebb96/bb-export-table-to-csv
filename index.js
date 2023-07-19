@@ -7,6 +7,7 @@ const budibaseAPIKey = process.env.BUDIBASE_API_KEY;
 const appID = process.env.APP_ID;
 const tableID = process.env.TABLE_ID;
 const callLimit = process.env.LIMIT;
+const hostingURL = process.env.HOSTING_URL;
 
 const progressBar = new cliProgress.SingleBar({
   format: 'Fetching rows... | {bar} | {percentage}% | {value} Rows',
@@ -103,7 +104,7 @@ function saveToCSVFile(content, filename) {
 
 const outputFilename = 'output.csv';
 
-fetchRows(`https://budibase.app/api/public/v1/tables/${tableID}/rows/search`, null)
+fetchRows(`${hostingURL}/api/public/v1/tables/${tableID}/rows/search`, null)
   .then(rows => {
     console.log(`Rows fetched: ${rows.length}`);
     const csvContent = convertToCSV(rows);
